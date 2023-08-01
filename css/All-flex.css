@@ -1,0 +1,299 @@
+* {
+    box-sizing: border-box;
+    /* 不用擔心體積變大 */
+}
+
+body {
+    margin: 0;
+    font-family: Boston, sans-serif;
+    display: flex;
+}
+
+#nav {
+    width: 300px;
+    height: 100vh;
+    background-color: #334040;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#nav:hover {
+    background-color: #586d6d;
+}
+
+.ham-menu {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    display: none;
+    float: left;
+}
+
+.ham-menu .line {
+    width: 80%;
+    height: 5px;
+    background-color: blanchedalmond;
+    position: absolute;
+    left: 10%;
+    transition: 1s;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ham-menu #line-1 {
+    top: 25%;
+}
+
+.ham-menu #line-2 {
+    top: 50%;
+}
+
+.ham-menu #line-3 {
+    top: 75%;
+}
+
+#ham-menu-swich:checked+.ham-menu #line-1 {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#ham-menu-swich:checked+.ham-menu #line-3 {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#ham-menu-swich:checked+.ham-menu #line-2 {
+    display: none;
+}
+
+#ham-menu-swich:checked~#nav-btn-all {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#logo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 60px;
+    background-image: url(../img/logo-0.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+#nav-btn-all {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.nav-btn {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.nav-btn a {
+    text-decoration: none;
+    color: #F2DB94;
+    padding: 20px 30px;
+    background-color: #334040;
+    border-radius: 5px;
+}
+
+.nav-btn a:visited {
+    color: #F2DB94;
+    background-color: #334040;
+}
+
+.nav-btn a:hover {
+    border: 5px solid #F2DB94;
+    border-radius: 18px;
+}
+
+.nav-btn a:active {
+    color: #334040;
+    background-color: #F2DB94;
+}
+
+#container {
+    width: calc(100% - 300px);
+    height: 100vh;
+    background-color: #334040;
+    display: flex;
+    align-items: center;
+}
+
+#container:hover {
+    background-color: #586d6d;
+}
+
+#content {
+    width: 750px;
+    height: 450px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-img {
+    width: 32%;
+    height: 100%;
+    background-size: cover;
+}
+
+.content-img:hover {
+    transform: scale(0.8);
+    border-radius: 5px;
+}
+
+#img-1 {
+    background-image: url(../img/ex-9.jpg);
+    background-position: 30%;
+}
+
+#img-2 {
+    background-image: url(../img/ex-10.jpg);
+    background-position: 30%;
+}
+
+#img-3 {
+    background-image: url(../img/ex-9.jpg);
+    background-position: 90%;
+}
+
+@media (max-width: 1280px) {
+    #content {
+        flex-wrap: wrap;
+    }
+    .content-img {
+        height: 50%;
+    }
+
+    #img-1 {
+        width: 100%;
+        margin-bottom: 2%;
+        background-position: bottom;
+    }
+
+    #img-2 {
+        width: 49%;
+    }
+
+    #img-3 {
+        background-position: center top;
+        width: 49%;
+    }
+}
+
+@media (max-width: 1110px) {
+    body {
+        flex-direction: column;
+    }
+    #nav {
+        width: 100%;
+        height: 100px;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #logo {
+        width: 70px;
+        height: 70px;
+        margin: 0;
+    }
+
+    #nav-btn-all {
+        flex-direction: row;
+        height: auto;
+    }
+
+    .nav-btn {
+        font-size: 14px;
+        margin: 0 0 0 15px;
+    }
+
+    .nav-btn a {
+        padding: 10px;
+    }
+
+    #container {
+        width: 100%;
+        height: calc(100vh - 100px);
+    }
+
+    #content {
+        width: 80%;
+        height: 500px;
+    }
+
+    #img-1 {
+        width: 100%;
+        height: 48%;
+    }
+
+    #img-2 {
+        height: 50%;
+    }
+
+    #img-3 {
+        height: 50%;
+    }
+}
+
+@media (max-width: 510px) {
+    #nav {
+        display: initial;
+        padding: 15px;
+        position: relative;
+    }
+
+    #nav:hover {
+        background-color: #334040;
+    }
+
+    #logo {
+        margin: auto;
+    }
+
+    .ham-menu {
+        display: block;
+    }
+
+    #nav-btn-all {
+        width: 200px;
+        background-color: #334040;
+        position: absolute;
+        display: none;
+        margin: 0;
+        top: 100px;
+        left: 15px;
+    }
+
+    .nav-btn {
+        margin: 15px 0;
+    }
+
+    #container {
+        padding: 0;
+    }
+
+    #content {
+        width: 100%;
+        height: 100%;
+    }
+
+    #img-1,
+    #img-2,
+    #img-3 {
+        height: calc((100vh - 100px) / 3);
+        width: 100%;
+        margin: 0;
+    }
+}
